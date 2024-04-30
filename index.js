@@ -33,6 +33,7 @@ async function run() {
         await client.connect();
 
         const artsCollection = client.db('artsDB').collection('arts');
+        const artsCraftsCollection = client.db('artsDB').collection('crafts')
 
 
         app.get('/arts', async (req, res) => {
