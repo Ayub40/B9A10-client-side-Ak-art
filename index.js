@@ -120,6 +120,12 @@ async function run() {
             res.send(result)
         })
 
+        // crafts collection
+        app.get("/crafts/:subcategory_name", async (req, res) => {
+            console.log(req.params.subcategory_name);
+            const result = await artsCraftsCollection.find({ subcategory_name: req.params.subcategory_name }).toArray();
+            res.send(result);
+        })
 
 
         // Send a ping to confirm a successful connection
