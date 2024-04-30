@@ -121,9 +121,10 @@ async function run() {
         })
 
         // crafts collection
-        app.get("/crafts/:subcategory_name", async (req, res) => {
+        app.get("/crafts", async (req, res) => {
             console.log(req.params.subcategory_name);
             const result = await artsCraftsCollection.find({ subcategory_name: req.params.subcategory_name }).toArray();
+            // const result = await artsCraftsCollection.find().toArray();
             res.send(result);
         })
 
